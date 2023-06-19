@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="visual"
+   viewBox="0 0 1284 2778"
+   width="1284"
+   height="2778"
+   version="1.1"
+   sodipodi:docname="layered-peaks-haikei.svg"
+   inkscape:export-filename="../onboarding-bottom.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6511" />
+  <sodipodi:namedview
+     id="namedview6509"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="0.24028395"
+     inkscape:cx="620.09969"
+     inkscape:cy="1997.6366"
+     inkscape:window-width="1236"
+     inkscape:window-height="954"
+     inkscape:window-x="22"
+     inkscape:window-y="35"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="visual" />
+  <path
+     d="M0 1830L183 1895L367 1958L550 1806L734 2009L917 2014L1101 1786L1284 1837L1284 2779L1101 2779L917 2779L734 2779L550 2779L367 2779L183 2779L0 2779Z"
+     fill="#e8c6c8"
+     id="path6498" />
+  <path
+     d="M0 1917L183 2123L367 1874L550 2088L734 1959L917 2067L1101 2219L1284 1960L1284 2779L1101 2779L917 2779L734 2779L550 2779L367 2779L183 2779L0 2779Z"
+     fill="#e6bcc6"
+     id="path6500" />
+  <path
+     d="M0 2348L183 2066L367 2040L550 2264L734 2080L917 2241L1101 2104L1284 2312L1284 2779L1101 2779L917 2779L734 2779L550 2779L367 2779L183 2779L0 2779Z"
+     fill="#e0b2c8"
+     id="path6502" />
+  <path
+     d="M0 2496L183 2435L367 2371L550 2463L734 2405L917 2233L1101 2292L1284 2265L1284 2779L1101 2779L917 2779L734 2779L550 2779L367 2779L183 2779L0 2779Z"
+     fill="#d6a9cd"
+     id="path6504" />
+  <path
+     d="M0 2467L183 2660L367 2456L550 2449L734 2573L917 2438L1101 2549L1284 2477L1284 2779L1101 2779L917 2779L734 2779L550 2779L367 2779L183 2779L0 2779Z"
+     fill="#c6a3d4"
+     id="path6506" />
+</svg>

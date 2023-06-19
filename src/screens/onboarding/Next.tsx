@@ -15,10 +15,11 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginVertical: "5%",
+        
     },
     button: {
         position: "absolute",
-        backgroundColor: colors.black_800,
+        backgroundColor: colors.white_50,
         borderRadius: 100,
         padding: 20,
     },
@@ -83,7 +84,7 @@ export default function Next({ percentage, scrollTo }: NextProps) {
                     />
                     <Circle
                         ref={progressRef}
-                        stroke={colors.rose_300}
+                        stroke={colors.white_500}
                         cx={defaults.center}
                         cy={defaults.center}
                         r={defaults.radius}
