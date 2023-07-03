@@ -25,12 +25,14 @@
     ├── context
     ├── helpers
     ├── routes
+    ├── shared
     └── screens
 
 - **components**: Os componentes que representam a mínima parte de uma estrutura de UI
 - **context**: Todos os estados compartilhados da aplicação
 - **helpers**: Arquivos com funções de utilidade
 - **routes**: Rotas das aplicação
+- **shared**: arquivos de informaçoes compartilhadas
 - **screens**: Componentes de tela
 
 ## Links úteis
