@@ -1,6 +1,6 @@
 import { User } from "@supabase/supabase-js";
 import React, { createContext, ReactNode } from "react";
-import { ToastAndroid, useWindowDimensions } from "react-native";
+import { useWindowDimensions } from "react-native";
 import supabase from "../helpers/supabaseClient";
 import { Task, UserData } from "../types/shared";
 
@@ -20,7 +20,11 @@ export type GlobalContextDataProps = {
         usern: string,
         birth: string
     ) => Promise<void>;
+    // Fetch the data from user by id
+    fetchData: (id: string | undefined) => Promise<void>;
 
+    // Set the current user logged
+    setUser: React.Dispatch<React.SetStateAction<User | null>>;
     // Stores user data of the authentication from the database.
     user: User | null;
     // Stores user data of the profile from the database.
@@ -88,7 +92,7 @@ type UnparsedProfile = {
 
 // Data received from the database.
 type UnparsedTask = {
-    completed: number;
+    completed: boolean;
     done: number;
     id: number;
     habit_id?: number;
@@ -234,11 +238,11 @@ export default function GlobalContextProvider({
             if (error || !data.user) {
                 // TODO: Use toast library for both IOS and Android
                 // Note this only show a Toast in android since IOS don't provide a built-in toast API.
-                ToastAndroid.show(
-                    error?.message ?? "Houve um erro no login!",
-                    ToastAndroid.LONG
-                );
-                throw Error("GlobalContext: signIn() -> Could not log-in!");
+                // ToastAndroid.show(
+                //     error?.message ?? "Houve um erro no login!",
+                //     ToastAndroid.LONG
+                // );
+                throw Error("Informacões de login Incorretas");
             }
 
             await setUser(data.user);
@@ -328,8 +332,20 @@ export default function GlobalContextProvider({
                 setUserData,
                 width,
                 height,
+                setUser,
+                fetchData,
             } satisfies GlobalContextDataProps),
-        [signUp, signIn, user, userData, setUserData, width, height]
+        [
+            signUp,
+            signIn,
+            user,
+            userData,
+            setUser,
+            setUserData,
+            width,
+            height,
+            fetchData,
+        ]
     );
 
     return (

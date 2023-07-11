@@ -1,7 +1,7 @@
 import { FontAwesome, Fontisto } from "@expo/vector-icons";
 import React, { useContext, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import Button from "../../components/button";
+import { Button } from "react-native-paper";
 import DatePicker from "../../components/date_picker";
 import InputIcon from "../../components/input_icon";
 import { GlobalContext } from "../../context/GlobalContext";
@@ -19,16 +19,20 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     input: {
-        height: 40,
-        borderBottomWidth: 1,
-        borderColor: colors.black_400,
+        // backgroundColor: "red",
         paddingLeft: 15,
         paddingRight: 25,
         borderRadius: 0,
-        minWidth: 100,
         color: colors.black_500,
         fontSize: 15,
         flex: 1,
+    },
+    input_border: {
+        marginBottom: 20,
+        marginTop: 10,
+        paddingBottom: 7.5,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.black_400,
     },
     title: {
         color: "black",
@@ -44,9 +48,7 @@ const styles = StyleSheet.create({
         margin: 10,
         backgroundColor: colors.rose_300,
     },
-    button_text: {
-        color: colors.white_50,
-    },
+    button_text: { color: colors.white_50 },
     button_out: {
         margin: 10,
         borderColor: colors.rose_100,
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default function Input() {
+export default function CadastroInput() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
@@ -126,68 +128,79 @@ export default function Input() {
         return true;
     };
 
-    // TODO: Here we can make a transition screen when sign-up is successful and
-    //       we enter the home screen of the application.
-
     return (
         <View style={styles.container}>
-            <InputIcon
-                styleContainer={styles.input_container}
-                style={styles.input}
-                onChangeText={setEmail}
-                value={email}
-                placeholder="Email"
-                keyboardType="default"
-                autoComplete="email"
-                inputMode="email"
-                Icon={
-                    <Fontisto name="email" size={20} color={colors.black_400} />
-                }
-            />
-            <InputIcon
-                styleContainer={styles.input_container}
-                style={styles.input}
-                onChangeText={setUsername}
-                value={username}
-                placeholder="Usuário"
-                keyboardType="default"
-                Icon={
-                    <FontAwesome
-                        name="user-o"
-                        size={20}
-                        color={colors.black_400}
-                    />
-                }
-            />
+            <View style={styles.input_border}>
+                <InputIcon
+                    styleContainer={styles.input_container}
+                    style={styles.input}
+                    onChangeText={setEmail}
+                    value={email}
+                    placeholder="Email"
+                    keyboardType="default"
+                    autoComplete="email"
+                    inputMode="email"
+                    Icon={
+                        <Fontisto
+                            name="email"
+                            size={20}
+                            color={colors.black_400}
+                        />
+                    }
+                />
+            </View>
+            <View style={styles.input_border}>
+                <InputIcon
+                    styleContainer={styles.input_container}
+                    style={styles.input}
+                    onChangeText={setUsername}
+                    value={username}
+                    placeholder="Usuário"
+                    keyboardType="default"
+                    Icon={
+                        <FontAwesome
+                            name="user-o"
+                            size={20}
+                            color={colors.black_400}
+                        />
+                    }
+                />
+            </View>
 
-            <DatePicker
-                style={{ flex: 1 }}
-                text={birthday}
-                textState={setBirth}
-                icon
-            />
+            <View style={styles.input_border}>
+                <DatePicker
+                    style={[styles.input, { flex: 1 }]}
+                    text={birthday}
+                    textState={setBirth}
+                    icon
+                />
+            </View>
 
-            <InputIcon
-                style={styles.input}
-                onChangeText={setPassword}
-                placeholder="Senha"
-                secureTextEntry
-                value={password}
-                Icon={
-                    <FontAwesome
-                        name="lock"
-                        size={20}
-                        color={colors.black_400}
-                    />
-                }
-            />
+            <View style={styles.input_border}>
+                <InputIcon
+                    style={styles.input}
+                    onChangeText={setPassword}
+                    placeholder="Senha"
+                    secureTextEntry
+                    value={password}
+                    Icon={
+                        <FontAwesome
+                            name="lock"
+                            size={20}
+                            color={colors.black_400}
+                        />
+                    }
+                />
+            </View>
             <Button
                 style={styles.button}
                 onPress={handleSubmit}
                 disabled={isloading}
-                title="Cadastrar"
-                titleStyle={styles.button_text}
-            />
+                loading={isloading}
+                textColor={styles.button_text.color}
+            >
+                Cadastrar
+            </Button>
         </View>
     );
 }

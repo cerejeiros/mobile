@@ -130,7 +130,7 @@ export type Task = {
     */
     done: number;
     times: number;
-    completed: number;
+    completed: boolean;
     /*
         Streak of a task being completed.
         In pseudo-code terms, when reseting the task with its "repeated"
